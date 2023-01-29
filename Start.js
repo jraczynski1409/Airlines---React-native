@@ -1,6 +1,5 @@
 import React from 'react';
 import { Alert, StyleSheet, Text, ScrollView, SafeAreaView, View, Image, Pressable } from 'react-native';
-import Stack from './App';
 import { DarkBlue, VeryDarkBlue, Blue, Grey, DarkGrey, BgColor, styles } from './Style';
 
 // aplikacja

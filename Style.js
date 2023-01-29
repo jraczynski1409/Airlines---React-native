@@ -14,7 +14,7 @@ export const styles = StyleSheet.create({
     container: {
         backgroundColor: BgColor,
         flex: 1,
-        justifyContent: 'space-between'
+
     },
 
     mainTop: {
@@ -96,21 +96,21 @@ export const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: Grey,
         width: '90%',
-        borderRadius: 10,      
+        borderRadius: 10,
     },
 
     checkboxContainer: {
-        width:'90%',
+        width: '90%',
     },
 
     checkboxContent: {
-        width:'100%',
+        width: '100%',
         backgroundColor: '#fff',
         border: 0,
         borderColor: "#fff",
         margin: 0,
         paddingVertical: 3,
-        paddingHorizontal:1,
+        paddingHorizontal: 1,
     },
 
     listInput: {
@@ -119,7 +119,74 @@ export const styles = StyleSheet.create({
         height: 40,
         backgroundColor: Grey,
         borderRadius: 5,
+    },
+
+    searchContainer: {
+        width: '90%',
+        height: 400,
+        backgroundColor: '#5aafdf',
+        borderBottomLeftRadius: 15,
+        borderBottomRightRadius: 15,
+    },
+    searchTab: {
+        width: '50%',
+        height: 50,
+        backgroundColor: '#5aafdf',
+        borderTopLeftRadius: 15,
+        borderTopRightRadius: 15,
+        marginTop: 30,
+    },
+    searchTabText: {
+        fontSize: 16,
+        color: '#fff',
+        lineHeight: 50,
+        alignSelf: 'center',
+    },
+
+    searchlistInput: {
+        alignSelf: 'center',
+        height: 60,
+        width: '50%',
+        marginHorizontal: 1,
+        backgroundColor: Grey,
+        borderRadius: 10,
+        alignSelf: 'flex-end',
+    },
+
+    ticketContainer: {
+        width: '88%',
+        height: 150,
+        backgroundColor: '#d7d7d7',
+        margin:10,
+        borderRadius: 10,
+        padding: 10,
+    },
+
+    ticketContainerActive: {
+        width: '88%',
+        height: 150,
+        margin: 10,
+        backgroundColor: '#8ccfff',
+        borderRadius: 10,
+        padding: 10,
+    },
+
+    bigInfo: {
+        fontSize: 18,
+        textAlign: 'center'
+    },
+    info: {
+        fontSize: 15,
+    },
+    buttonTextSettings: {
         
-        
-    }
+    },
+    buttonSettings: {
+        textAlign: 'left',
+        width: '90%',
+        height: 50,
+        borderBottomWidth: 1,
+        borderBottomColor: "#ddd",
+        padding:15
+    },
 });

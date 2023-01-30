@@ -1,12 +1,11 @@
 import React from 'react';
 import { Alert, StyleSheet, Text, ScrollView, SafeAreaView, View, Image, Pressable, TextInput } from 'react-native';
 import { DarkBlue, VeryDarkBlue, Blue, Grey, DarkGrey, BgColor, styles } from './Style';
-
+import "./global.js"
 // aplikacja
-export default function Tickets({ navigation }) {
+export default function CheckIn({ navigation,route }) {
 
     return (
-
         <SafeAreaView style={styles.container}>
             <ScrollView>
 
@@ -16,7 +15,7 @@ export default function Tickets({ navigation }) {
                     <View style={[styles.inputContainer, { height: 96 }]}>
                         <TextInput style={[styles.inputText, { borderTopWidth: 0 }]} placeholder="Numer rezerwacji" />
                         <TextInput style={styles.inputText} placeholder="Nazwisko pasazera" />
-
+						
                     </View>
                     <Pressable onPress={() => Alert.alert("Odprawa sie powodla")} style={[styles.button, { backgroundColor: Blue, borderColor: DarkBlue, }]} ><Text style={[styles.buttonText, { color: "#fff" }]}>Dalej</Text></Pressable>
                     <Text style={{ textAlign: 'center' }}>LUB</Text>

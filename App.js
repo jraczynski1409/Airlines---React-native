@@ -12,7 +12,7 @@ import  Contact  from './Contact';
 import  Calendar from './Calendar';
 import  Results from './Results';
 import Tickets from './CheckIn';
-
+import "./global.js"
 
 
 

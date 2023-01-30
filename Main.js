@@ -7,14 +7,15 @@ import Search from './Search';
 import Account from './Account';
 import Settings from './Settings';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import "./global.js"
 
 const Tab = createBottomTabNavigator();
 
 // aplikacja
-export default function Main() {
+export default function Main({ navigation }) {
 
     return (
-        <Tab.Navigator>
+        <Tab.Navigator >
             <Tab.Screen name={'Odprawa'} component={CheckIn} />
             <Tab.Screen name={'Moje loty'} component={Tickets} />
 

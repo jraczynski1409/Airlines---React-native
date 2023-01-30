@@ -3,9 +3,9 @@ import { Alert, StyleSheet, Text, ScrollView, SafeAreaView, View, Image, Pressab
 import { DarkBlue, VeryDarkBlue, Blue, Grey, DarkGrey, BgColor, styles } from './Style';
 import { Picker } from '@react-native-picker/picker'; 
 import CalendarPicker from 'react-native-calendar-picker';
-
+import "./global.js"
 // aplikacja
-export default function Search({ navigation }) {
+export default function Search({ navigation, route }) {
 
     return (
 
@@ -68,7 +68,6 @@ export default function Search({ navigation }) {
                     </Picker>
                     <Text style={{ width: '90%', alignSelf: 'center', marginTop: -50, marginLeft: 10, fontSize: 10 }}>Ilosc pasazerow</Text>
                 </View>
-
                 <Pressable onPress={() => navigation.navigate('Results')} style={[styles.button, { width:'100%',backgroundColor: DarkBlue, borderColor: DarkBlue, marginTop:30}]} ><Text style={[styles.buttonText, { color: "#fff" }]}>Szukaj</Text></Pressable>    
                 
             </View>

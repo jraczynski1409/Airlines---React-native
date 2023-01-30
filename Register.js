@@ -3,9 +3,10 @@ import { CheckBox } from 'react-native-elements';
 import { StyleSheet, Text, ScrollView, SafeAreaView, View, Image, Pressable, TextInput } from 'react-native';
 import { DarkBlue, VeryDarkBlue, Blue, Grey, DarkGrey, BgColor, styles } from './Style';
 import { Backend } from './Backend';
+import "./global.js"
 
 
-const newUser = (mail,pass,telefon,zgoda,mark) => {
+const newUser = (mail,pass,telefon,zgoda,mark,navigation) => {
 	var data = {
 		mail:mail,
 		pass:pass,
@@ -23,7 +24,12 @@ const newUser = (mail,pass,telefon,zgoda,mark) => {
 			body: JSON.stringify(data)
 		}).then((response)=>response.json())
 		.then((response)=>{
-			alert(response[0].mess);
+			if(response[0].mess=="utworzono konto"){
+				navigation.navigate('Lists');
+				global.mail = mail;
+			}else{
+				alert(response[0].mess);
+			}
 		})
 		.catch((error)=>{
 			alert("Error"+error);
@@ -39,7 +45,6 @@ export default function Register({navigation}){
 	const [telefon, setTelefon] = useState('');
 	const [zgoda, setZgoda] = useState(true);
 	const [mark, setMark] = useState(false);
-	
     return (
 		
         <SafeAreaView style={styles.container}>
@@ -56,8 +61,8 @@ export default function Register({navigation}){
                     <Text style={styles.description}>W ten sposob uzyskasz dostep do pelnej wersji aplikacji. Zaloz konto.</Text>
                     <View style={[styles.inputContainer, {  height: 144 }]}>
                         <TextInput onChangeText={newMail => setMail(newMail)} defaultValue={mail} style={[styles.inputText, {borderTopWidth: 0 }]} placeholder="E-mail" />
-                        <TextInput onChangeText={newPass => setPass(newPass)} defaultValue={pass} style={styles.inputText} placeholder="Haslo" />
-                        <TextInput onChangeText={newTelefon => setTelefon(newTelefon)} defaultValue={telefon} style={styles.inputText} placeholder="Numer telefonu" />
+                        <TextInput onChangeText={newPass => setPass(newPass)} defaultValue={pass} style={styles.inputText} secureTextEntry={true} placeholder="Haslo" />
+                        <TextInput onChangeText={newTelefon => setTelefon(newTelefon)} defaultValue={telefon} style={styles.inputText} maxLength={9} keyboardType = 'number-pad' placeholder="Numer telefonu" />
 						
                         
                     </View>
@@ -70,7 +75,7 @@ export default function Register({navigation}){
             </ScrollView>
                 <View style={[styles.mainBottom]}>
                 
-                <Pressable onPress={() => {newUser(mail,pass,telefon,zgoda,mark)}} style={[styles.button, { backgroundColor: Blue, borderColor: DarkBlue, }]} ><Text style={[styles.buttonText, { color: "#fff" }]}>Dalej</Text></Pressable>
+                <Pressable onPress={() => {newUser(mail,pass,telefon,zgoda,mark,navigation)}} style={[styles.button, { backgroundColor: Blue, borderColor: DarkBlue, }]} ><Text style={[styles.buttonText, { color: "#fff" }]}>Dalej</Text></Pressable>
                 <Pressable onPress={() => navigation.navigate('Login')} style={[styles.button, { borderWidth: 0, }]} ><Text style={[styles.buttonText, { color: DarkBlue, textDecorationLine: "underline", }]}>Masz juz konto?</Text></Pressable>
 
                 </View>
